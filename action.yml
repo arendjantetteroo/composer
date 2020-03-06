@@ -5,6 +5,10 @@ inputs:
     description: 'Composer command to run'
     required: true
     default: install
+  args:
+    description: 'args to run'
+    required: false
+
 outputs:
   time:
     description: 'The time the action was run'
@@ -13,7 +17,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
-    
+    - ${{ inputs.args }}
 branding:
   icon: 'package'  
   color: 'purple'
